@@ -44,6 +44,18 @@ public class Auction
         }
     }
     
+    public void close()
+    {
+        for(Lot lot : lots) {
+            if (lot.getHighestBid() == null){
+                System.out.println("El articulo:" + lot.getDescription() + " no tiene puja.");
+            }else{
+                String nombre = (lot.getHighestBid().getBidder().getName());
+                System.out.println("Articulo:" + lot.getDescription() + " - Pujador mas alto:" + nombre + " - Puja:" + lot.getHighestBid().getValue());
+            }
+        }
+    }
+    
     /**
      * Make a bid for a lot.
      * A message is printed indicating whether the bid is
