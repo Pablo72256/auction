@@ -56,6 +56,16 @@ public class Auction
         }
     }
     
+    public ArrayList<Lot> getUnsoId(){
+        ArrayList<Lot> lotes = new ArrayList<Lot>();
+        for(Lot lot : lots) {
+            if (lot.getHighestBid() == null){
+                lotes.add(lot);              
+            }
+        }
+        return lotes;
+    }
+    
     /**
      * Make a bid for a lot.
      * A message is printed indicating whether the bid is
